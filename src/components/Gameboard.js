@@ -51,14 +51,16 @@ const Gameboard = () => {
             )}
 
             {!win && !bust && (
-              <button
-                onClick={async () => {
-                  await getNewCard(deck, changeCard);
-                }}
-                className="hit-me"
-              >
-                Hit Me
-              </button>
+              <div className="btn">
+                <button
+                  onClick={async () => {
+                    await getNewCard(deck, changeCard);
+                  }}
+                  className="hit-me"
+                >
+                  Hit Me
+                </button>
+              </div>
             )}
             {win && (
               <div className="win">

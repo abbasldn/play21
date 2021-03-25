@@ -22,7 +22,7 @@ $giant: 64px;
 .gameboard {
   background-color: #007a87;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -38,11 +38,13 @@ $giant: 64px;
   }
 
   .bust,
-  .win {
+  .win,
+  .btn {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #007a87;
 
     h1 {
       text-align: center;
@@ -72,22 +74,25 @@ $giant: 64px;
   }
 
   .cards {
-    width: 85vw;
-    margin: 0 auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
   }
 
   .card {
+    @media (max-width: 630px) {
+      width: 37.5vw;
+      height: 52.5vw;
+    }
     margin: $tiny;
-    width: 25vw;
-    height: 35vw;
+    width: 250px;
+    height: 350px;
     position: relative;
     background-color: #f8f9fa;
     border-radius: $tiny;
     display: inline-block;
     box-shadow: 0 0 10px 1px #dadce0;
+
     span {
       font-family: Cardo;
       font-size: 2em;
@@ -104,10 +109,19 @@ $giant: 64px;
       bottom: $tiny;
       right: $small;
       flex-direction: column-reverse;
+      @media screen and (max-width: 630px) {
+        bottom: $micro;
+        right: $tiny;
+      }
     }
     .top-left {
       top: $tiny;
       left: $small;
+
+      @media screen and (max-width: 630px) {
+        top: $micro;
+        left: $tiny;
+      }
     }
   }
 }

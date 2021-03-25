@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: Cardo;
+  font-feature-settings: 'calt';
+}
+
+$micro: 4px;
+$tiny: 8px;
+$small: 16px;
+$medium: 24px;
+$large: 32px;
+$x-large: 48px;
+$giant: 64px;
+
+.gameboard {
+  background-color: #007a87;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .score-banner {
+    text-align: right;
+    padding: $large;
+    color: #f8f9fa;
+  }
+
+  .score {
+    text-align: center;
+    color: #f8f9fa;
+  }
+
+  .bust,
+  .win {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      text-align: center;
+      padding: $small $medium;
+    }
+  }
+
+  .bust {
+    h1 {
+      background-color: #fb592d;
+    }
+  }
+  .win {
+    h1 {
+      background-color: #15a2b1;
+    }
+  }
+
+  button {
+    padding: $large;
+    font-size: $medium;
+    font-family: Cardo;
+    margin: $giant auto;
+    background-color: #e9f0fd;
+    border: none;
+    width: 80%;
+  }
+
+  .cards {
+    width: 85vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    margin: $tiny;
+    width: 25vw;
+    height: 35vw;
+    position: relative;
+    background-color: #f8f9fa;
+    border-radius: $tiny;
+    display: inline-block;
+    box-shadow: 0 0 10px 1px #dadce0;
+    span {
+      font-family: Cardo;
+      font-size: 2em;
+    }
+    .top-left,
+    .bottom-right {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .bottom-right {
+      transform: rotate(180deg);
+      bottom: $tiny;
+      right: $small;
+      flex-direction: column-reverse;
+    }
+    .top-left {
+      top: $tiny;
+      left: $small;
+    }
+  }
+}

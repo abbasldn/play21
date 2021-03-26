@@ -81,7 +81,10 @@ const TwentyOneReducer = (state, action) => {
       };
     }
     case 'END': {
-      if (state.score > parseInt(window.localStorage.getItem('highScore'))) {
+      if (
+        window.localStorage.getItem('highScore') === null ||
+        state.score > parseInt(window.localStorage.getItem('highScore'))
+      ) {
         window.localStorage.setItem('highScore', state.score.toString());
       }
       if (action.payload.win) {
